@@ -79,3 +79,11 @@ document
     const historyList = document.getElementById("history-list");
     historyList.innerText = "";
   });
+
+document
+  .getElementById("bg-theme-change")
+  .addEventListener("click", function () {
+    console.log("theme");
+    let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    document.body.style.backgroundColor = randomColor;
+  });
