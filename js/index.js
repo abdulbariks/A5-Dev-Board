@@ -18,7 +18,6 @@ dynamicTime.innerText = `${formattedDate}`;
 const completedButtons = document.querySelectorAll(".completed-btn");
 for (const completedButton of completedButtons) {
   completedButton.addEventListener("click", function (event) {
-    console.log(completedButton);
     const title =
       event.target.parentNode.parentNode.getElementsByTagName("h3")[0]
         .innerHTML;
@@ -51,7 +50,6 @@ for (const completedButton of completedButtons) {
     const devBoardTask = document.getElementById("dev-board-task");
     const currentDevBoardTask = parseInt(devBoardTask.innerText);
     const newDevBoardTask = currentDevBoardTask + 1;
-    console.log(newDevBoardTask);
     devBoardTask.innerText = newDevBoardTask;
     if (!completedButton.disabled) {
       if (currentAssgintedTask === 1) {
@@ -77,7 +75,6 @@ document
 document
   .getElementById("bg-theme-change")
   .addEventListener("click", function () {
-    console.log("theme");
     let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
     document.body.style.backgroundColor = randomColor;
   });
