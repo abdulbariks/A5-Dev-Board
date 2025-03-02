@@ -22,8 +22,6 @@ for (const completedButton of completedButtons) {
     const title =
       event.target.parentNode.parentNode.getElementsByTagName("h3")[0]
         .innerHTML;
-    console.log(title);
-    console.log(completedButtons.length);
 
     // time start
     let now = new Date();
@@ -35,20 +33,18 @@ for (const completedButton of completedButtons) {
     let formattedTime = `${hours}:${String(minutes).padStart(2, "0")}:${String(
       seconds
     ).padStart(2, "0")} ${amPm}`;
-    console.log(formattedTime);
     // time end
 
     const historyList = document.getElementById("history-list");
     const div = document.createElement("div");
     div.innerHTML = `<div class="text-center my-5">
-            <h3>You have Completed the task ${title} at ${formattedTime}</h3>
+            <h3 class="bg-slate-400 p-3">You have Completed the task ${title} at ${formattedTime}</h3>
           </div>`;
     historyList.appendChild(div);
     // Task Assigned
     const assgintedTask = document.getElementById("assigned-task");
     const currentAssgintedTask = parseInt(assgintedTask.innerText);
     const newAssgintedTask = currentAssgintedTask - 1;
-    console.log(newAssgintedTask);
     assgintedTask.innerText = newAssgintedTask;
 
     // DevBoard Task
@@ -58,8 +54,6 @@ for (const completedButton of completedButtons) {
     console.log(newDevBoardTask);
     devBoardTask.innerText = newDevBoardTask;
     if (!completedButton.disabled) {
-      console.log(currentAssgintedTask);
-
       if (currentAssgintedTask === 1) {
         alert("Board Updated Successfully");
         alert("Congrates!! You have Completed All the Current Task ");
